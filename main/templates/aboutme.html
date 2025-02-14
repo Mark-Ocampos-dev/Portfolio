@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include 'meta' %}
+    <title>About Me</title>
+</head>
+<body>
+
+    <div class="container fade-in">
+    {% include 'main-content' %}
+
+    <ul class="my-5 nav saira-condensed-light justify-content-center anchor-custom fs-2">
+        <li class="nav-item mx-2">
+            <a href="{% url 'home' %}" class="text-description text-active-hover nav-link" aria-current="page">Home</a>
+        </li>
+        <li class="nav-item mx-2">
+            <a href="{% url 'about' %}" class="text-active-color active text-active-hover nav-link ">About Me</a>
+        </li>
+        <li class="nav-item mx-2">
+            <!-- <a href="{% url 'blog' %}" class="text-description text-active-hover nav-link ">Blog</a> -->
+        </li>
+        <li class="nav-item mx-2">
+            <a href="{% url 'project' %}" class="text-description text-active-hover nav-link ">Project</a>
+        </li>
+        <li class="nav-item mx-2">
+            <a href="{% url 'contact' %}" class="text-description text-active-hover nav-link ">Contact</a>
+        </li>
+    </ul>
+
+    <div class="my-5">
+        <p class="jersey-15-regular fs-1 text-center text-light-custom">About Me</p>
+
+        <img class="w-25 rounded mx-auto d-block" src="{% static 'image/Icon/wall burst.webp' %}" alt="me">
+
+        <div class="text-center my-5">
+            <span class="saira-condensed-semibold text-center fs-3 text-description">Hi! I’m Mark Anthony, a</span>
+            <div class="saira-condensed-semibold text-center fs-3 pe-1 text-description blinking-border" id="changing-text"></div>
+            <span class="saira-condensed-semibold text-center fs-3 ms-1 text-description">based in Philppines.</span>   
+        </div>
+
+    </div>  
+
+</div>
+
+<hr class="my-5">
+
+{% include 'footer' %}
+
+</body>
+</html>

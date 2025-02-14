@@ -1,0 +1,67 @@
+{% load static %}
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="keywords" content="">
+<meta name="description" content="">
+
+<!-- general SEO -->
+<meta name="title" content="Your Website Title - Top-notch Content & Services" />
+<meta name="description" content="Explore a wide range of offerings, crafted to meet your needs. Learn more today!" />
+<meta name="keywords" content="SEO, digital marketing, e-commerce, your brand keywords" />
+<meta name="author" content="Your Brand Name" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://yourwebsite.com" />
+
+<!-- internal link -->
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link rel="shortcut icon" href="{% static 'image/icon2/mind blown.webp' %}" type="image/x-icon">
+
+<!-- external link  -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    crossorigin="anonymous">
+<style>
+    body {
+        background-image: url("{% static 'image/Image background/girl-8435339_1920.webp' %}");
+        background-position: top;
+        background-size: cover;
+        background-repeat: no-repeat;
+        backdrop-filter: blur(7px);
+    }
+
+    .fade-in {
+        animation: fade-in 1s ease-out forwards;
+    }
+
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    #changing-text {
+        border-right: 3px solid #fff;
+        overflow: hidden;
+        display: inline;
+    }
+
+    .blinking-border {
+        animation: blink 1000ms ease forwards;
+    }
+
+    @keyframes blink {
+        50% {
+            border-color: transparent !important;
+        }
+
+        100% {
+            border-color: #fff !important;
+        }
+    }
+</style>

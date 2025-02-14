@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include 'meta' %}
+    <title>400 - Bad Request</title>
+</head>
+<body class="container justify-content-center text-center">
+<div class="card bg-transparent col-6 my-5 py-5">
+<img class="img-fluid my-3"  src="{% static 'image/icon2/sad rain.webp' %}" alt="rake hit me">
+    <h1>Oops! Bad Request (400) 🚫</h1>
+    <p>Something went wrong with your request. Please check your input and try again.</p>
+    <a href="/">Go Back Home</a>
+</div>    
+</body>
+</html>

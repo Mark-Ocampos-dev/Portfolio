@@ -1,0 +1,117 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include 'meta' %}
+    <title>Contact</title>
+    <style>
+        .input-group input,
+        .input-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #ccc;
+    backdrop-filter: opacity(.5);
+    border: 6px solid #ccc;
+    color: blueviolet;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: blueviolet;
+    backdrop-filter: blur(5px);
+    background-color: white;
+    transition-duration: 1000ms;
+}
+
+.input-group label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #999;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label,
+.input-group textarea:focus + label,
+.input-group textarea:not(:placeholder-shown) + label {
+    top: 0;
+    left: 10px;
+    font-size: 20px;
+    color: blueviolet;
+    background-color: #fff;
+    padding: 0 5px;
+}
+
+.blur-custom {
+    backdrop-filter: opacity(.5);
+}
+
+    </style>
+</head>
+<body>
+    <div class="container fade-in">
+    {% include 'main-content' %}
+
+    <ul class="my-5 nav saira-condensed-light justify-content-center anchor-custom fs-3">
+        <li class="nav-item mx-2">
+            <a href="{% url 'home' %}" class="text-light-custom text-active-hover nav-link" aria-current="page">Home</a>
+        </li>
+        <li class="nav-item mx-2">
+            <a href="{% url 'about' %}" class="text-light-custom text-active-hover nav-link ">About Me</a>
+        </li>
+        <li class="nav-item mx-2">
+            <!-- <a href="{% url 'blog' %}" class="text-light-custom text-active-hover nav-link ">Blog</a> -->
+        </li>
+        <li class="nav-item mx-2">
+            <a href="{% url 'project' %}" class="text-light-custom text-active-hover nav-link ">Project</a>
+        </li>
+        <li class="nav-item mx-2">
+            <a href="{% url 'contact' %}" class="text-active-color text-active-hover active nav-link ">Contact</a>
+        </li>
+    </ul>
+
+    <div class="container">
+
+        <p class="jersey-15-regular fs-1 text-center text-light-custom">Contact</p>
+
+        <div class="silkscreen-regular blur-custom card scale-animation-custom p-2 col-6 mx-auto">
+            <p class="fs-4 fw-bold ">Email:</p>  <a target="_blank" href="mailto:markocampos.mail@gmail.com">
+                <img class="img-fluid" src="{% static 'image/icon2/let me know.webp' %}" alt="">
+            </a>
+        </div>
+
+        
+        <!-- <form action="post">            
+            <div class="input-group input-group-lg mb-5">
+                <input type="text" class="rounded form-control" aria-label="Name" name="name" id="name" aria-describedby="inputGroup-sizing-lg" autocomplete="name" required>
+                <label class="rounded" for="name">Name</label>
+            </div>
+
+              <div class="input-group input-group-lg mb-5">
+                <input type="email" class="rounded form-control" name="email" id="email" aria-label="Email" aria-describedby="inputGroup-sizing-lg" autocomplete="email" required>
+                <label class="rounded" for="email">Email</label>
+              </div>
+
+            <div class="input-group input-group-lg mb-5">
+                <textarea type="text" class="rounded form-control" name="message" id="message" aria-label="Message" rows="15" required></textarea>
+                <label class="rounded" for="message">Message</label>
+              </div>
+
+            <button class="d-block btn btn-primary input-group fs-3" type="submit">Send</button>
+        </form> -->
+    </div>
+</div>
+
+    {% include 'footer' %}
+</div>
+
+</body>
+</html>

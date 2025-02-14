@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include 'meta' %}
+    <title>Changing Text Example</title>
+    <style>
+        /* Fade-in animation for the page */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        #changing-text {
+            font-size: 2em;
+            font-weight: bold;
+            color: #333;
+            border-right: 2px solid #333; /* Cursor effect */
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+        }
+
+        /* Blinking cursor animation */
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+
+
+.form-container {
+    width: 300px;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: #28a745;
+}
+
+.input-group label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #999;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+    top: 0;
+    left: 10px;
+    font-size: 12px;
+    color: #28a745;
+    background-color: #fff;
+    padding: 0 5px;
+}
+    </style>
+</head>
+<body>
+    <h1>Welcome to Our Website</h1>
+    <div id="changing-text"></div>
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">@</span>
+        </div>
+        <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+      </div>
+
+      <div class="form-container">
+        <div class="input-group">
+            <input type="text" id="name" required>
+            <label for="name">Your Name</label>
+        </div>
+    </div>
+
+    <script>
+        const texts = [
+            "Developer",
+            "Gamer",
+            "Streamer",
+            "Player"
+        ];
+
+        let index = 0;
+        let charIndex = 0;
+        const textElement = document.getElementById('changing-text');
+
+        function typeWriter() {
+            if (charIndex < texts[index].length) {
+                textElement.textContent += texts[index].charAt(charIndex);
+                charIndex++;
+                setTimeout(typeWriter, 100); 
+            } else {
+                setTimeout(eraseText, 2000);
+            }
+        }
+
+        function eraseText() {
+            if (charIndex > 0) {
+                textElement.textContent = texts[index].substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(eraseText, 50); 
+            } else {
+                index = (index + 1) % texts.length;
+                setTimeout(typeWriter, 500);
+            }
+        }
+
+        typeWriter();
+
+        document.querySelectorAll('.input-group input').forEach(input => {
+    input.addEventListener('focus', () => {
+        input.parentElement.querySelector('label').classList.add('active');
+    });
+
+    input.addEventListener('blur', () => {
+        if (!input.value) {
+            input.parentElement.querySelector('label').classList.remove('active');
+        }
+    });
+});
+    </script>
+    {% include 'footer' %}
+</body>
+</html> 
