@@ -6,9 +6,8 @@
     <title>Project</title>
 </head>
 <body>
-<div class="container fade-in">
+<div class="fade-in">
     {% include 'main-content' %}
-    <div class="container">
 
     <ul class="my-5 nav saira-condensed-light justify-content-center anchor-custom fs-3">
         <li class="nav-item mx-2">
@@ -21,7 +20,7 @@
             <a href="{% url 'blog' %}" class="text-light-custom text-active-hover nav-link ">Blog</a>
         </li> -->
         <li class="nav-item mx-2">
-            <a href="{% url 'project' %}" class="text-active-color mx-3 text-active-hover active nav-link ">Project</a>
+            <a href="{% url 'project' %}" class="text-active-color text-active-hover active nav-link ">Project</a>
         </li>
         <li class="nav-item mx-2">
             <a href="{% url 'contact' %}" class="text-light-custom text-active-hover nav-link ">Contact</a>
@@ -31,9 +30,11 @@
 
         <p class="jersey-15-regular fs-1 text-center text-light-custom">Project</p>
 
+    <div class="container p-4">
+
         <div class="row justify-content-center">
 
-        <a class="scale-animation-custom anchor-custom rounded card p-4 col-lg-3 mx-3 my-5" href="https://iihcportal.onrender.com/" target="_blank">
+        <a class="user-select-auto anchor-custom rounded card p-4 col-sm-12 col-lg-3 mx-3 my-5" href="https://iihcportal.onrender.com/" target="_blank">
             <img class="card-img-top rounded" src="{% static 'image/logo/images-removebg-preview.webp' %}" alt="school logo of iihcportal">
             <p class="text-underline fs-4 card-title jersey-15-regular">School Portal</p>
             <p class="card-text silkscreen-regular">A experimental research that serves as a school portal that you can enroll and explore any time</p>
@@ -45,23 +46,22 @@
 
     <p class="jersey-15-regular fs-1 text-center text-light-custom mt-5">Gallery</p>
 
-    <div class="row justify-content-center">
-        <a target="_blank" class="scale-animation-custom anchor-custom rounded card p-4 col-lg-3 mx-3 my-5" href="https://unsplash.com/@mr_pxel">
+    <div class="row justify-content-center ">
+        <a target="_blank" class="anchor-custom rounded card p-4 col-sm-12 col-lg-3  mx-3 my-5" href="https://unsplash.com/@mr_pxel">
             <img class="card-img-top" src="{% static 'image/logo/unsplash.webp' %}" alt="unsplash logo">
             <p class="text-underline fs-4 card-title jersey-15-regular">Unsplash</p>
             <p class="card-text silkscreen-regular">This is a organization that gives you a free photo that you can use in your project</p>
         </a>
 
-        <a target="_blank" class="scale-animation-custom anchor-custom rounded card p-4 col-lg-3 mx-3 my-5" href="https://unsplash.com/@mr_pxel">
+        <a target="_blank" class="anchor-custom rounded card p-4 col-sm-12 col-lg-3 mx-3 my-5" href="https://unsplash.com/@mr_pxel">
             <img class="card-img-top" src="{% static 'image/logo/eyecandid.webp' %}" alt="eyecandid logo">
             <p class="text-underline fs-4 card-title jersey-15-regular">Eyecandid</p>
             <p class="card-text silkscreen-regular">This website is free organization that supports professional and amateur photographers</p>
 
         </a>
-
     </div>
+</div>
 
     {% include 'footer' %}
-</div>
 </body>
 </html>

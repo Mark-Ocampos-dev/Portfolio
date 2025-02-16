@@ -1,5 +1,6 @@
+<div class="py-5">
     <a href="{% url 'home' %}" class="anchor-custom">
-        <p class="p-0 jersey-15-regular text-light-custom text-light-hover text-center custom-fs mt-5">Mark Anthony Ocampos</p>
+        <p class="fs-1 p-0 jersey-15-regular text-light-custom text-light-hover text-center">Mark Anthony Ocampos</p>
     </a>
 
     <p class="my-3 fs-5 text-center text-description saira-condensed-medium">
@@ -8,3 +9,4 @@
         <span class="text-light-hover mx-3">Editor</span> |
         <span class="text-light-hover mx-3">Photographer</span>
     </p>
+</div>
